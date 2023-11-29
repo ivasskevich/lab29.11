@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Массивы</title>
+</head>
+<body>
+    <script>
+
+        "use strict";
+        let fruits = ["Ananas", "Mango", "Kiwi", "Banana", "Apple"];
+       
+        function sortFruits()
+        {
+            fruits.sort();
+        }
+        
+        
+        function displayFruits() {
+    document.write("<ul>"); 
+    for (let i = 0; i < fruits.length; i++) {
+        document.write("<li>" + fruits[i] + "</li>");
+    }
+    document.write("</ul>");
+}
+
+function findFruit(fruitName) {
+   fruitName = fruitName.toLowerCase(); 
+    for (let i = 0; i < fruits.length; i++) {
+        if (fruits[i].toLowerCase() === fruitName) {
+            return i; 
+        }
+    }
+    return -1; 
+}
+
+sortFruits();
+displayFruits();
+
+        let userInput = prompt("Input fruit name:");
+        if (userInput) {
+            let search = find(userInput);
+            if (search !== -1) {
+                document.write("This is your fruit: " + search);
+            }
+            else {
+                document.write("There is no fruit with that name");
+            }
+        }
+        
+    </script>
+</body>
+</html>
